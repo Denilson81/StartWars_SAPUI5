@@ -10,7 +10,14 @@
     "title": "",
     "description": "",
     "resources": "resources.json",
-    "ach": "ach"
+    "ach": "ach",
+
+    "dataSources": {
+      "peopleSource": {
+      "uri": "https://swapi.dev/api/people/",
+      "type": "JSON"
+      }  
+    }  
   },
   "sap.ui": {
     "technology": "UI5",
@@ -55,7 +62,14 @@
         "settings": {
           "bundleName": "pina.starwars.i18n.i18n"
         }
-      }
+      },
+
+      "people": {
+        "type" : "sap.ui.model.json.JSONModel",
+        "preload" : true,        
+        "dataSource": "peopleSource"
+        }
+
     },
     "resources": {
       "css": [

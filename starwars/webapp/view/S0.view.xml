@@ -8,7 +8,30 @@
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content />
+                    <subHeader>
+                     <Toolbar visible="true" width="" design="Solid" enabled="true">
+                            <content>
+                             <SearchField visible="true" width="100%" showSearchButton="true" placeholder="Search"/>
+                            </content>
+                       </Toolbar>                     
+					</subHeader>
+                    <content>
+
+                        <List
+                            items="{peopleList>/results}"
+                            headerText="Characters" >
+                            <ObjectListItem
+                                title="{peopleList>name}"
+                                type="Active"
+                                press="onListItemPress"
+
+                                
+                                >
+
+                            </ObjectListItem>
+                        </List>                         					
+					
+					</content>
 				</Page>
 			</pages>
 		</App>
