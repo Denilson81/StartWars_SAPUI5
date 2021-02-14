@@ -1,0 +1,41 @@
+<mvc:View
+    controllerName="pina.starwars.controller.S1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page id="page" title="{i18n>title}">
+        <subHeader>
+            <Toolbar visible="true" width="" design="Solid" enabled="true">
+                <content>
+                    <SearchField visible="true" width="100%" showSearchButton="true" placeholder="Search" liveChange="onSearch"/>
+                </content>
+            </Toolbar>                     
+        </subHeader>
+        <content>
+            <List
+                id="idList"
+                items="{/results}"
+                headerText="Characters" 
+                growing="true" 
+                growingThreshold="5" 
+                itemPress="onListItemPress"   >
+                
+                <items>
+                    <ObjectListItem
+                        icon="sap-icon://personnel-view"
+                        title="{name}"
+                        type="Navigation" >                      
+                    
+                    <ObjectAttribute title="Height"    text="{height}" /> 
+                    <ObjectAttribute title="Birthdate" text="{birth_year}" />
+                    <ObjectAttribute title="Gender"    text="{gender}" /> 
+                    
+                    </ObjectListItem>
+                </items>
+            </List>                         					
+        
+        </content>
+    </Page>
+
+</mvc:View>

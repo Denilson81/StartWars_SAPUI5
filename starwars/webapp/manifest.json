@@ -16,7 +16,11 @@
       "peopleSource": {
       "uri": "https://swapi.dev/api/people/",
       "type": "JSON"
-      }  
+      },
+      "filmsSource": {
+        "uri": "https://swapi.dev/api/films/",
+        "type": "JSON"
+        }          
     }  
   },
   "sap.ui": {
@@ -68,8 +72,12 @@
         "type" : "sap.ui.model.json.JSONModel",
         "preload" : true,        
         "dataSource": "peopleSource"
-        }
-
+        },
+        "films": {
+          "type" : "sap.ui.model.json.JSONModel",
+          "preload" : true,        
+          "dataSource": "filmsSource"
+          }        
     },
     "resources": {
       "css": [
@@ -90,19 +98,32 @@
       },
       "routes": [
         {
-          "name": "RouteS0",
-          "pattern": "RouteS0",
-          "target": ["TargetS0"]
-        }
+          "name": "default",
+          "pattern": "",
+          "target": ["S1"]
+        },
+        {
+          "name": "detail",
+          "pattern": "person/{namePerson}",
+          "target": ["S2"]
+        }  
+               
       ],
       "targets": {
-        "TargetS0": {
-          "viewType": "XML",
+        "S1": {
+          "transition": "slide",          
+          "clearControlAggregation": false,
+          "viewId": "S1",
+          "viewName": "S1",
+          "viewLevel": 1
+        },
+        "S2": {
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "S0",
-          "viewName": "S0"
-        }
+          "viewId": "S2",
+          "viewName": "S2",
+          "viewLevel": 2
+        }                   
       }
     }
   }
