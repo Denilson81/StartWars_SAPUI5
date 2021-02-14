@@ -1,0 +1,67 @@
+<mvc:View
+    controllerName="pina.starwars.controller.S2"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+>
+
+<Page showNavButton="true" navButtonPress="onBack" id="page" title="Test StartWars">
+    
+        <ObjectHeader
+            icon="sap-icon://personnel-view"
+            title="{name}"
+            >
+                        
+        <ObjectAttribute title="Height"    text="{height}" /> 
+        <ObjectAttribute title="Birthdate" text="{birth_year}" />
+        <ObjectAttribute title="Gender"    text="{gender}" /> 
+        
+        </ObjectHeader>
+   
+   <content>
+
+			<table:Table
+				rows="{films>/results}"
+				visibleRowCount="7"
+				selectionMode="None"
+				ariaLabelledBy="title">
+				<table:columns>
+					<table:Column width="11rem">
+						<Label text="Film Name" />
+						<table:template>
+							<Text text="{films>title}" wrapping="false" />
+						</table:template>
+					</table:Column>
+					<table:Column width="11rem">
+						<Label text="Episode" />
+						<table:template>
+							<Text text="{films>episode_id}" wrapping="false" />
+						</table:template>
+					</table:Column>
+					<table:Column width="11rem">
+						<Label text="Director" />
+						<table:template>
+							<Text text="{films>director}" wrapping="false" />
+						</table:template>
+					</table:Column>
+					<table:Column width="11rem">
+						<Label text="Producer" />
+						<table:template>
+							<Text text="{films>producer}" wrapping="false" />
+						</table:template>
+					</table:Column>    
+					<table:Column width="11rem">
+						<Label text="Release Date" />
+						<table:template>
+							<Text text="{films>release_date}" wrapping="false" />
+						</table:template>
+					</table:Column>                                      
+				</table:columns>
+			</table:Table>
+
+
+   </content>
+</Page>
+
+</mvc:View>
