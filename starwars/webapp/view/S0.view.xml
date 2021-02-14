@@ -11,24 +11,31 @@
                     <subHeader>
                      <Toolbar visible="true" width="" design="Solid" enabled="true">
                             <content>
-                             <SearchField visible="true" width="100%" showSearchButton="true" placeholder="Search"/>
+                             <SearchField visible="true" width="100%" showSearchButton="true" placeholder="Search" liveChange="onSearch"/>
                             </content>
                        </Toolbar>                     
 					</subHeader>
                     <content>
-
                         <List
-                            items="{peopleList>/results}"
-                            headerText="Characters" >
+                            id="idList"
+                            items="{/results}"
+                            headerText="Characters" 
+                            growing="true" growingThreshold="5" 
+                             itemPress="onListItemPress"  
+                            >
+                            <items>
                             <ObjectListItem
-                                title="{peopleList>name}"
-                                type="Active"
-                                press="onListItemPress"
-
-                                
-                                >
-
+                                icon="sap-icon://personnel-view"
+                                title="{name}"
+                                type="Navigation"
+                                                             
+                            >
+                            <ObjectAttribute title="Height"    text="{height}" />
+                            <ObjectAttribute title="Birthdate" text="{birth_year}" />
+                            <ObjectAttribute title="Gender"    text="{gender}" /> 
+                            
                             </ObjectListItem>
+                            </items>
                         </List>                         					
 					
 					</content>

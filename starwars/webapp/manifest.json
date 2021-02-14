@@ -64,7 +64,7 @@
         }
       },
 
-      "people": {
+      "": {
         "type" : "sap.ui.model.json.JSONModel",
         "preload" : true,        
         "dataSource": "peopleSource"
