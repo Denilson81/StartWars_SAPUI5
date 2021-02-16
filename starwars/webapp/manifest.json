@@ -92,7 +92,7 @@
         "viewType": "XML",
         "async": true,
         "viewPath": "pina.starwars.view",
-        "controlAggregation": "pages",
+        "controlAggregation": "detailPages",
         "controlId": "app",
         "clearControlAggregation": false
       },
@@ -105,7 +105,7 @@
         {
           "name": "detail",
           "pattern": "person/{namePerson}",
-          "target": ["S2"]
+          "target": ["S1", "S2"]
         }  
                
       ],
@@ -115,8 +115,9 @@
           "clearControlAggregation": false,
           "viewId": "S1",
           "viewName": "S1",
-          "viewLevel": 1
-        },
+          "viewLevel": 1,
+          "controlAggregation": "masterPages"
+         },
         "S2": {
           "transition": "slide",
           "clearControlAggregation": false,

@@ -4,11 +4,24 @@
     displayBlock="true"
     xmlns="sap.m"
 >
-	<Shell id="shell">
+	<!-- <Shell id="shell">
 		<App id="app">
 			<pages>
 
 			</pages>
 		</App>
-	</Shell>
+	</Shell> -->
+	
+	<SplitApp id="app">
+	    <!-- These agregation are optional because master and detail is already implicit -->
+       <!-- <masterPages>
+
+	   </masterPages>
+
+	   <detailPages>
+
+	   </detailPages> -->
+
+	</SplitApp>
+	
 </mvc:View>
